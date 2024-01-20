@@ -12,10 +12,6 @@ Generate Grounding SAM Results with Tag2Text
 ```
 python tag2text_SAM.py
 ```
-Combine Segmentation Results with Maskclip 
-```
-python pred_seg.py
-```
 Extract 2D features
 ```
 python Scene_2D_feats.py
