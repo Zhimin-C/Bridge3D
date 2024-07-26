@@ -25,4 +25,9 @@ Extract 2D features
 ```
 python Scene_2D_feats.py
 ```
+```
+python pred_seg.py
+```
+
+
 
