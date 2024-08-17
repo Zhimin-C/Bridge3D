@@ -24,7 +24,7 @@ import clip
 from PIL import Image
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model, preprocess = clip.load("ViT-B/16", device=device)
+clip_model, preprocess = clip.load("ViT-B/16", device=device)
 
 # Grounding DINO
 try:
@@ -537,9 +537,9 @@ def main():
             with open(text_base_path + '/' + image_name[:-4] + '_caption.txt', 'w') as f:
                 f.write(str(caption))
 
-            text = clip.tokenize([caption]).to(device)
+            text_token = clip.tokenize([caption]).to(device)
             with torch.no_grad():
-                text_features = model.encode_text(text)
+                text_features = clip_model.encode_text(text_token)
 
             np.save(text_base_path + '/' + image_name[:-4] + '_caption.npy', text_features.cpu())
 
