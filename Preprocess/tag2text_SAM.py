@@ -19,6 +19,13 @@ from os.path import join
 
 import matplotlib.pyplot as plt
 
+import torch
+import clip
+from PIL import Image
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model, preprocess = clip.load("ViT-B/16", device=device)
+
 # Grounding DINO
 try:
     import groundingdino
@@ -530,7 +537,11 @@ def main():
             with open(text_base_path + '/' + image_name[:-4] + '_caption.txt', 'w') as f:
                 f.write(str(caption))
 
+            text = clip.tokenize([caption]).to(device)
+            with torch.no_grad():
+                text_features = model.encode_text(text)
 
+            np.save(text_base_path + '/' + image_name[:-4] + '_caption.npy', text_features.cpu())
 
             args.text_prompt = tag2text_prompt[:-1]
             if tag2text_prompt == '':
