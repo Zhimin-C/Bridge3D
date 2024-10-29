@@ -33,9 +33,9 @@ See the Preprocess parts.
 
 ## 3. Bridge3D Weights
 
-Pre-training [here](https://github.com/Pang-Yatian/Point-MAE/releases/download/main/pretrain.pth)
+Pre-training [here](https://drive.google.com/file/d/1HP72jPbWumXt0Z5TXXCYHfi-GRIWjfL2/view?usp=sharing)
 
-3detr on Scannet [here](https://github.com/Pang-Yatian/Point-MAE/releases/download/main/pretrain.pth)
+3detr on Scannet [here](https://drive.google.com/file/d/1UYZumcNdCEBGKG6JAyLNPPsGuPEizcgI/view?usp=sharing)
 
 ## 4. Bridge3D Pre-training
 ```
